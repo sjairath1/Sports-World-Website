@@ -1,0 +1,115 @@
+body *{
+   box-sizing: border-box;
+   width: 100%;
+   border: solid 1px black;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+   margin: 0;
+   font-family: 'Arial';
+}
+.container {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   grid-template-rows: 1fr 1fr 2fr;
+   grid-template-areas: 
+   "menu1 . menu2 menu2"
+   "card1 card2 card3 aside"
+   "main main main aside"
+   ; 
+   height: 100%;
+   grid-row-gap: 10px;
+   grid-column-gap: 10px;
+   min-height: 100vh;
+   padding: 20px;
+}
+article, aside, section, main {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: solid 1px #000;
+}
+
+.menu1{
+   grid-area: menu1;
+   background-color: palevioletred;
+}
+
+.menu2{
+   grid-area: menu2;
+   background-color: yellow;
+}
+
+.card1{
+   grid-area: card1;
+   background-color: lightskyblue;
+}
+
+.card2{
+   grid-area: card2;
+   background-color: lightskyblue;
+
+}
+
+.card3{
+   grid-area: card3;
+   background-color: lightskyblue;
+
+}
+
+.aside{
+   grid-area: aside;
+   background-color: gray;
+}
+
+.main{
+   grid-area: main;
+   background-color: lightskyblue;
+
+}
+@media (max-width: 1024px){
+   .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 0.5fr 3fr 2fr 1fr;
+      grid-template-areas: 
+      "menu1 menu2"
+      "aside aside"
+      "card1 card2"
+      "card3 card3" 
+      "main main"
+      ; 
+      height: 100%;
+      grid-row-gap: 10px;
+      grid-column-gap: 10px;
+      min-height: 100vh;
+      padding:10px
+   }
+   
+}
+
+@media (max-width: 600px){
+   .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 0.7fr 3fr 3fr 3fr 3fr 3fr;
+      grid-template-areas: 
+      "menu1" 
+      "menu2"
+      "card1"
+      "card2"
+      "card3"
+      "aside" 
+      "main"
+
+
+      ; 
+      height: 100%;
+      grid-row-gap: 10px;
+      grid-column-gap: 10px;
+      min-height: 100vh;
+      padding: 5px;
+   }
+   
+}
