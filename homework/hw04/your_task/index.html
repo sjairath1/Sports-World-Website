@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>Spotify Player</title>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/62a7c74d0d.js" crossorigin="anonymous" defer></script>
+        <script type="text/javascript" src="js/audio-player.js" defer></script>
+        <script type="text/javascript" src="js/scripts.js" defer></script>
+    </head>
+    <body id="container">
+        <aside id="sidebar">
+            <h1>
+                <i class="fab fa-spotify"></i>
+                Spotify
+            </h1>
+            <a class="selected" href="#">
+                <i class="fas fa-search"></i>
+                Search
+            </a>
+        </aside>
+
+        <main>
+            <header>
+                <i class="fas fa-search"></i>
+                <input type="search" 
+                    placeholder="Search for Artists or Songs" 
+                    id="search" 
+                    value="" />
+            </header>
+            <article id="featured-content">
+                <section id="artist-section">
+                    <h1>Top Result</h1>
+                    <section id="artist">Artist card goes here.</section>
+                </section>
+                <section id="track-section">
+                    <h1>Songs</h1>
+                    <section id="tracks">First 5 tracks go here.</section>
+                </section>
+                <section id="album-section">
+                    <h1>Albums</h1>
+                    <section id="albums">Albums go here.</section>
+                </section>
+            </article>
+        </main>
+        
+        <footer>
+            <div id="current-track" class="track-item">
+                <!-- to be populated from data -->
+            </div>
+            <div class="player">
+                <div class="controls">
+                    <button id="rwd" aria-label="rewind"><i class="fas fa-step-backward"></i></button>
+                    <button id="play_pause" aria-label="play or pause"><i class="far fa-play-circle"></i></button>
+                    <button id="ffwd" aria-label="fast forward"><i class="fas fa-step-forward"></i></button>
+                </div>
+                <div class="slider">
+                    <audio preload class="audio">
+                        <source src="#" type="audio/mpeg" />
+                    </audio>
+                    <span id="time-elapsed">0:00</span>
+                    <input aria-label="visually displays how the audio time is advancing" type="range" id="player-time">
+                    <span id="time-total">3:00</span>
+                </div>
+                <audio id="track" src="" />
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height:100%;
+    margin:0;
+    padding:0;
+}
+
+.search-form {
+    padding: 50px;
+}
+.search-form > div {
+    margin: 10px;
+}
+.search-form label {
+    width: 100px;
+    font-weight: 600;
+    display: inline-block;
+    text-align: right;
+}
+.search-form input {
+    padding: 6px 3px;
+    width: 350px;
+}
+.search-form button {
+    margin-left: 110px;
+}
+
+.restaurants {
+    margin-left: 160px;
+}
+
+.restaurants img {
+    width: 300px;
+}

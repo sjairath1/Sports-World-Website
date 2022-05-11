@@ -1,0 +1,11 @@
+body {
+    margin: 0 10vw 10vh 10vw;
+}
+img {
+    width: 350px;
+}
+#gallery {
+    border: solid 1px #000;
+    padding: 10px;
+    min-height: 40vh;
+}
