@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vega-Lite Line Chart</title>
+    <meta charset="utf-8" />
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <style media="screen">
+      /* Add space between Vega-Embed links  */
+      .vega-actions a {
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Template for Embedding Vega-Lite Visualization</h1>
+    <!-- Container for the visualization -->
+    <div id="vis"></div>
+    <div id="value"></div>
+    
+    <script>
+        // Assign the specification to a local variable vlSpec.
+        var vlSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 500,
+            "height": 300,
+            "data": {
+                "url": "https://vega.github.io/vega-lite/data/us-10m.json",
+                "format": {
+                "type": "topojson",
+                "feature": "counties"
+                }
+            },
+            "transform": [{
+                "lookup": "id",
+                "from": {
+                "data": {
+                    "url": "https://vega.github.io/vega-lite/data/unemployment.tsv"
+                },
+                "key": "id",
+                "fields": ["rate"]
+                }
+            }],
+            "projection": {
+                "type": "albersUsa"
+            },
+            "mark": {"type": "geoshape", "tooltip": true },
+            "encoding": {
+                "color": {
+                    "field": "rate",
+                    "type": "quantitative"
+                }
+            }
+        };
+
+        // Embed the visualization in the container with id `vis`
+        vegaEmbed('#vis', vlSpec, {"actions": false})
+            .then(obj => {
+                const view = obj.view;
+                
+                // add click event
+                view.addEventListener('click', (event, item) => {
+                    console.log('CLICK', event, item);
+                    console.log(item.datum.rate);
+                    document.querySelector('#value').innerHTML = item.datum.rate;
+                });
+            });
+    </script>
+  </body>
+</html>
