@@ -195,7 +195,7 @@ h1{
     font-family:'Times New Roman', Times, serif;
     font-size: 3em;
   } */
-@media screen and (min-width:770px){
+@media screen and (min-width:700){
   
 
   html, body {
@@ -276,7 +276,7 @@ main {
 
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 440px) {
   body {
   background-image: url(../final-project/images/phone.jpg); 
   }
