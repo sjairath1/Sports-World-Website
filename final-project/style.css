@@ -260,3 +260,20 @@ main {
     transform: translate3d(-1px, 0, -40px) rotateY(90deg);
     transform-origin: 100%;
   }
+
+  
+@media only screen and (min-width:1px) and (max-width:700px) {
+  .image {
+    background-position:left center;
+  }
+
+  .h1{
+    font-size: 3em;
+    position: relative;
+  }
+
+  .navbar{
+    display: flex;
+    justify-content:space-between;
+  }
+}
