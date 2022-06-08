@@ -86,6 +86,27 @@ p{
     margin-bottom: 10px;
 }
 
+iframe{
+  width: 100%;
+}
+
+
+
+@media only screen and (min-width:1px) and (max-width:700px) {
+  .image {
+    background-position:left center;
+  }
+
+  .h1{
+    font-size: 1em;
+    position: relative;
+  }
+
+  .navbar{
+    display: flex;
+    justify-content:space-between;
+  }
+}
 
 
 @media only screen and (min-width:768px){
