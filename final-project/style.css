@@ -268,7 +268,7 @@ main {
   }
 
   .h1{
-    font-size: 3em;
+    align-content: center;
     position: relative;
   }
 
